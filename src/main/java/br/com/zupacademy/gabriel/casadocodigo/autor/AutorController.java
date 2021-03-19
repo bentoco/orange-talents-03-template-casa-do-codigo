@@ -1,6 +1,5 @@
 package br.com.zupacademy.gabriel.casadocodigo.autor;
 
-import br.com.zupacademy.gabriel.casadocodigo.config.validation.EmailDuplicateAutorValidator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
@@ -12,19 +11,19 @@ import javax.validation.Valid;
 public class AutorController {
 
     private final AutorRepository autorRepository;
-    private final EmailDuplicateAutorValidator emailDuplicateAutorValidator;
+    private final AutorValidatorDuplicateEmail autorValidatorDuplicateEmail;
 
     public AutorController (
             AutorRepository autorRepository,
-            EmailDuplicateAutorValidator emailDuplicateAutorValidator ) {
+            AutorValidatorDuplicateEmail autorValidatorDuplicateEmail ) {
         this.autorRepository = autorRepository;
-        this.emailDuplicateAutorValidator = emailDuplicateAutorValidator;
+        this.autorValidatorDuplicateEmail = autorValidatorDuplicateEmail;
     }
 
     @InitBinder
     public void init( WebDataBinder binder) {
         //1
-        binder.addValidators(emailDuplicateAutorValidator);
+        binder.addValidators(autorValidatorDuplicateEmail);
     }
 
     @PostMapping

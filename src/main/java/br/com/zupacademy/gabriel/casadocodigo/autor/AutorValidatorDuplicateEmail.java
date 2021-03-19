@@ -1,8 +1,5 @@
-package br.com.zupacademy.gabriel.casadocodigo.config.validation;
+package br.com.zupacademy.gabriel.casadocodigo.autor;
 
-import br.com.zupacademy.gabriel.casadocodigo.autor.Autor;
-import br.com.zupacademy.gabriel.casadocodigo.autor.AutorRepository;
-import br.com.zupacademy.gabriel.casadocodigo.autor.AutorRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -10,11 +7,11 @@ import org.springframework.validation.Validator;
 import java.util.Optional;
 
 @Component
-public class EmailDuplicateAutorValidator implements Validator {
+public class AutorValidatorDuplicateEmail implements Validator {
 
     private final AutorRepository autorRepository;
 
-    public EmailDuplicateAutorValidator ( AutorRepository autorRepository ) {
+    public AutorValidatorDuplicateEmail ( AutorRepository autorRepository ) {
         this.autorRepository = autorRepository;
     }
 
