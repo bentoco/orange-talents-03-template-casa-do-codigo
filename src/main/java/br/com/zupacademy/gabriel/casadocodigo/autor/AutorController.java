@@ -1,9 +1,9 @@
 package br.com.zupacademy.gabriel.casadocodigo.autor;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
@@ -27,9 +27,10 @@ public class AutorController {
     }
 
     @PostMapping
-    public ResponseEntity<Autor> create( @RequestBody @Valid AutorRequest request){
+    @Transactional
+    public String create( @RequestBody @Valid AutorRequest request){
         Autor autor = request.toModel();
         autorRepository.save(autor);
-        return ResponseEntity.ok().build();
+        return autor.toString();
     }
 }
