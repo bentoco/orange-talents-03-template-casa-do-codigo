@@ -1,11 +1,14 @@
 package br.com.zupacademy.gabriel.casadocodigo.autor;
 
+import br.com.zupacademy.gabriel.casadocodigo.config.validation.UniqueValue;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 public class AutorRequest {
     private @NotBlank String nome;
+    @UniqueValue (domainClass = Autor.class, fieldName = "email")
     private @NotBlank @Email String email;
     private @NotBlank @Size(max = 400) String descricao;
 

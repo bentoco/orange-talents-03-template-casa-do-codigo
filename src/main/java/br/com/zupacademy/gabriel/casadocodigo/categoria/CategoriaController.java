@@ -1,6 +1,5 @@
 package br.com.zupacademy.gabriel.casadocodigo.categoria;
 
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -11,18 +10,9 @@ import javax.validation.Valid;
 public class CategoriaController {
 
     private final CategoriaRepository categoriaRepository;
-    private final CategoriaValidatorDuplicateName categoriaValidatorDuplicateName;
 
-    public CategoriaController (
-            CategoriaRepository categoriaRepository,
-            CategoriaValidatorDuplicateName categoriaValidatorDuplicateName ) {
+    public CategoriaController ( CategoriaRepository categoriaRepository ) {
         this.categoriaRepository = categoriaRepository;
-        this.categoriaValidatorDuplicateName = categoriaValidatorDuplicateName;
-    }
-
-    @InitBinder
-    public void init(WebDataBinder binder){
-        binder.addValidators(categoriaValidatorDuplicateName);
     }
 
     @PostMapping
