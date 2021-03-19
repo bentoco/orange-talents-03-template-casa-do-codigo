@@ -1,2 +1,11 @@
-package br.com.zupacademy.gabriel.casadocodigo.categoria;public class CategoriaRepository {
+package br.com.zupacademy.gabriel.casadocodigo.categoria;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface CategoriaRepository extends CrudRepository<Categoria, Long> {
+    Optional<Categoria> findByNomeCategoria ( String nomeCategoria );
 }
