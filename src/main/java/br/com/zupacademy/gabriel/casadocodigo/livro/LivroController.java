@@ -1,5 +1,6 @@
 package br.com.zupacademy.gabriel.casadocodigo.livro;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
@@ -7,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/livros")
@@ -22,7 +24,6 @@ public class LivroController {
         this.manager = manager;
         this.livroRepository = livroRepository;
     }
-
 
     @PostMapping
     @Transactional
@@ -50,5 +51,14 @@ public class LivroController {
     public List<LivroResponseIdNome> lista(){
         List<Livro> livros = livroRepository.findAll();
         return LivroResponseIdNome.toDto(livros);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<LivroResponseById> livroById( @PathVariable Long id){
+        Optional<Livro> livro = livroRepository.findById(id);
+        if (livro.isPresent()) {
+            return ResponseEntity.ok(new LivroResponseById(livro.get()));
+        }
+        return ResponseEntity.notFound().build();
     }
 }
