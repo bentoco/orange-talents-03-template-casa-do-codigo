@@ -66,7 +66,6 @@ public class LivroRequest {
     public Livro toModel ( EntityManager manager ) {
         @NotNull Categoria categoria = manager.find(Categoria.class, idCategoria);
         @NotNull Autor autor = manager.find(Autor.class, idAutor);
-
         Assert.state(categoria != null, "ID da categoria informado não existe em nosso banco de dados " + idCategoria);
         Assert.state(autor != null, "ID do autor(a) informado não existe em nosso banco de dados " + idAutor);
 
