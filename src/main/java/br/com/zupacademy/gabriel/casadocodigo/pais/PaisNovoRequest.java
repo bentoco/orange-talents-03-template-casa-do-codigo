@@ -1,6 +1,6 @@
 package br.com.zupacademy.gabriel.casadocodigo.pais;
 
-import br.com.zupacademy.gabriel.casadocodigo.config.validation.UniqueValue;
+import br.com.zupacademy.gabriel.casadocodigo.validation.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

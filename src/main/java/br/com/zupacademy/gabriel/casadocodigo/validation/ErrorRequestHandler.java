@@ -1,4 +1,4 @@
-package br.com.zupacademy.gabriel.casadocodigo.config.validation;
+package br.com.zupacademy.gabriel.casadocodigo.validation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

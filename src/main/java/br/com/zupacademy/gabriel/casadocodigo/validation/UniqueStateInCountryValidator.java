@@ -1,4 +1,4 @@
-package br.com.zupacademy.gabriel.casadocodigo.config.validation;
+package br.com.zupacademy.gabriel.casadocodigo.validation;
 
 import br.com.zupacademy.gabriel.casadocodigo.estado.Estado;
 import br.com.zupacademy.gabriel.casadocodigo.estado.EstadoNovoRequest;

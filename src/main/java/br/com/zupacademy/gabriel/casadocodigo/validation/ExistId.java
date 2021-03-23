@@ -1,4 +1,4 @@
-package br.com.zupacademy.gabriel.casadocodigo.config.validation;
+package br.com.zupacademy.gabriel.casadocodigo.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

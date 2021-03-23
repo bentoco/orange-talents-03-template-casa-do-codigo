@@ -2,8 +2,8 @@ package br.com.zupacademy.gabriel.casadocodigo.livro;
 
 import br.com.zupacademy.gabriel.casadocodigo.autor.Autor;
 import br.com.zupacademy.gabriel.casadocodigo.categoria.Categoria;
-import br.com.zupacademy.gabriel.casadocodigo.config.validation.ExistId;
-import br.com.zupacademy.gabriel.casadocodigo.config.validation.UniqueValue;
+import br.com.zupacademy.gabriel.casadocodigo.validation.ExistId;
+import br.com.zupacademy.gabriel.casadocodigo.validation.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.util.Assert;
 

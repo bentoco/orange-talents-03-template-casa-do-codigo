@@ -1,6 +1,6 @@
 package br.com.zupacademy.gabriel.casadocodigo.autor;
 
-import br.com.zupacademy.gabriel.casadocodigo.config.validation.UniqueValue;
+import br.com.zupacademy.gabriel.casadocodigo.validation.UniqueValue;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

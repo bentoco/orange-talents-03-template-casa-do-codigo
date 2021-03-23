@@ -1,7 +1,7 @@
 package br.com.zupacademy.gabriel.casadocodigo.estado;
 
-import br.com.zupacademy.gabriel.casadocodigo.config.validation.ExistId;
-import br.com.zupacademy.gabriel.casadocodigo.config.validation.UniqueStateInCountry;
+import br.com.zupacademy.gabriel.casadocodigo.validation.ExistId;
+import br.com.zupacademy.gabriel.casadocodigo.validation.UniqueStateInCountry;
 import br.com.zupacademy.gabriel.casadocodigo.pais.Pais;
 
 import javax.persistence.EntityManager;
