@@ -10,19 +10,24 @@ import java.time.LocalDateTime;
 public class Autor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue ( strategy = GenerationType.IDENTITY )
     private Long id;
-    @NotBlank @Column(nullable = false)
+    @NotBlank
+    @Column ( nullable = false )
     private String nome;
-    @NotBlank @Email @Column(nullable = false)
+    @NotBlank
+    @Email
+    @Column ( nullable = false )
     private String email;
-    @NotBlank @Size (max = 400) @Column(nullable = false, length = 400)
-    private  String descricao;
+    @NotBlank
+    @Size ( max = 400 )
+    @Column ( nullable = false, length = 400 )
+    private String descricao;
     private LocalDateTime dataCriacao = LocalDateTime.now();
 
     public Autor (
-            @NotBlank String nome,
-            @NotBlank String email,
+            @NotBlank String nome ,
+            @NotBlank String email ,
             @NotBlank @Size ( max = 400 ) String descricao ) {
         this.nome = nome;
         this.email = email;
@@ -39,6 +44,10 @@ public class Autor {
 
     public String getDescricao () {
         return descricao;
+    }
+
+    public String getEmail () {
+        return email;
     }
 
     @Override public String toString () {

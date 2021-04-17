@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("api/autores")
+@RequestMapping ( "api/autores" )
 public class AutorController {
 
     private final AutorRepository autorRepository;
@@ -17,7 +17,7 @@ public class AutorController {
 
     @PostMapping
     @Transactional
-    public String create( @RequestBody @Valid AutorRequest request){
+    public String create ( @RequestBody @Valid AutorRequest request ) {
         Autor autor = request.toModel();
         autorRepository.save(autor);
         return autor.toString();
